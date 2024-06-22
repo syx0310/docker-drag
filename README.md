@@ -5,17 +5,28 @@ It relies on the Docker registry [HTTPS API v2](https://docs.docker.com/registry
 
 ## Pull a Docker image in HTTPS
 
-`python docker_pull.py hello-world`
+### Set up
 
-`python docker_pull.py mysql/mysql-server:8.0`
+```bash
+mv config.yaml.example config.yaml
+nano config.yaml
+```
 
-`python docker_pull.py mcr.microsoft.com/mssql-tools`
+### Pull
 
-`python docker_pull.py consul@sha256:6ba4bfe1449ad8ac5a76cb29b6c3ff54489477a23786afb61ae30fb3b1ac0ae9`
+```bash
+python docker_pull.py hello-world
+
+python docker_pull.py mysql/mysql-server:8.0
+
+python docker_pull.py mcr.microsoft.com/mssql-tools
+
+python docker_pull.py consul@sha256:6ba4bfe1449ad8ac5a76cb29b6c3ff54489477a23786afb61ae30fb3b1ac0ae9
+```
 
 After the image has been downloaded (`.tar` file), you can then import it and use it with the following docker commands:
 
-```
+```bash
 docker load -i library_ubuntu.tar
 docker run -it ubuntu
 ```

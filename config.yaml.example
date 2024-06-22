@@ -1,0 +1,6 @@
+proxies:
+  - socks5h://<user>:<password>@<ip>:<port>
+  - socks5://<user>:<password>@<ip>:<port>
+  - socks5://<ip>:<port>
+  - http://<ip>:<port>
+timeout: 10  
